@@ -61,10 +61,15 @@ I manage his external brain containing over **172,076 files** and **44,444 entit
 
       const data = {
         text: "Vasuki Founder Mode Active.\n\nConnected to local corpus migration layer.",
-        isMock: true
-      };
-       
-	setIsGeminiActive(false);
+        isMock: true};
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to query Vasuki Core');
+      }
+
+      const data = await res.json();
+      setIsGeminiActive(!data.isMock);
 
       const botMsg: Message = {
         id: `vasuki-${Date.now()}`,
