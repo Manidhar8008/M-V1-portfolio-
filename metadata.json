@@ -1,0 +1,8 @@
+{
+  "name": "Manidhar Pati Portfolio",
+  "description": "AI Systems Engineer Portfolio showcasing Vasuki Core, a private personal intelligence database & knowledge graph system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

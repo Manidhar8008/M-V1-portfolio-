@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@theme {
+  --color-theme-bg: var(--theme-bg);
+  --color-theme-bg-subtle: var(--theme-bg-subtle);
+  --color-theme-card: var(--theme-card);
+  --color-theme-border: var(--theme-border);
+  --color-theme-border-subtle: var(--theme-border-subtle);
+  --color-theme-accent: var(--theme-accent);
+  --color-theme-accent-subtle: var(--theme-accent-subtle);
+  --color-theme-text-muted: var(--theme-text-muted);
+  --color-theme-text-bright: var(--theme-text-bright);
+}
+
+:root {
+  --theme-bg: #000000;
+  --theme-bg-subtle: #050505;
+  --theme-card: #0a0a0a;
+  --theme-border: #171717;
+  --theme-border-subtle: #262626;
+  --theme-accent: #a855f7; /* purple-500 */
+  --theme-accent-subtle: rgba(168, 85, 247, 0.1);
+  --theme-text-muted: #737373;
+  --theme-text-bright: #ffffff;
+}
+
+.theme-archaeological {
+  --theme-bg: #0b0a09; /* Obsidian-tinged stone basalt */
+  --theme-bg-subtle: #12100e;
+  --theme-card: #181512; /* Coarse dry bronze-tinted rock card */
+  --theme-border: #3b3124; /* Engraved bronze border */
+  --theme-border-subtle: #4e402e; /* Light etched/graved lines */
+  --theme-accent: #d4af37; /* Warm ancient gold */
+  --theme-accent-subtle: rgba(212, 175, 55, 0.08);
+  --theme-text-muted: #8c8272; /* Clay/weathered stone text */
+  --theme-text-bright: #ebdcc5; /* Warm papyrus/parchment white */
+
+  /* Archaeological texture overlay */
+  background-image: 
+    radial-gradient(circle at 1px 1px, #262017 1px, transparent 0),
+    linear-gradient(to right, #1d1813 1px, transparent 1px),
+    linear-gradient(to bottom, #1d1813 1px, transparent 1px);
+  background-size: 24px 24px, 120px 120px, 120px 120px;
+}
+
+/* Custom Carved Accents for the Archaeological Theme */
+.theme-archaeological .card-carved {
+  border-radius: 4px !important;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.theme-archaeological .card-carved::before {
+  content: "┼";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  font-family: monospace;
+  font-size: 8px;
+  color: var(--theme-border-subtle);
+  opacity: 0.7;
+}
+
+.theme-archaeological .card-carved::after {
+  content: "┼";
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-family: monospace;
+  font-size: 8px;
+  color: var(--theme-border-subtle);
+  opacity: 0.7;
+}
+
+/* Custom scrollbars matching the theme colors */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--theme-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--theme-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-accent);
+}
