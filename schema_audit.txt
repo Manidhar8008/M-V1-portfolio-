@@ -1,0 +1,473 @@
+===== activity_log =====
+0|id|INTEGER|0||1
+1|timestamp|TEXT|0||0
+2|source|TEXT|0||0
+3|activity_type|TEXT|0||0
+4|title|TEXT|0||0
+5|content|TEXT|0||0
+6|metadata|TEXT|0||0
+
+===== files =====
+0|id|INTEGER|0||1
+1|path|TEXT|0||0
+2|name|TEXT|0||0
+3|extension|TEXT|0||0
+4|category|TEXT|0||0
+5|size|INTEGER|0||0
+6|created_at|TEXT|0||0
+7|modified_at|TEXT|0||0
+
+===== memory_clusters =====
+0|id|INTEGER|0||1
+1|cluster_name|TEXT|0||0
+2|memory_count|INTEGER|0||0
+3|summary|TEXT|0||0
+
+===== artifacts =====
+0|id|INTEGER|0||1
+1|source|TEXT|0||0
+2|path|TEXT|0||0
+3|content|TEXT|0||0
+4|created_at|TEXT|0||0
+5|artifact_type|TEXT|0||0
+6|chars|INTEGER|0||0
+7|title|TEXT|0||0
+8|modified_at|TEXT|0||0
+9|importance|INTEGER|0|1|0
+
+===== founder_actions =====
+0|id|INTEGER|0||1
+1|action|TEXT|0||0
+2|priority|INTEGER|0||0
+3|reason|TEXT|0||0
+4|created_at|TEXT|0||0
+
+===== memory_fts =====
+0|memory||0||0
+
+===== artifacts_v2 =====
+0|id|INTEGER|0||1
+1|artifact_type|TEXT|0||0
+2|title|TEXT|0||0
+3|path|TEXT|0||0
+4|content|TEXT|0||0
+5|chars|INTEGER|0||0
+6|file_size|INTEGER|0||0
+7|created_at|TEXT|0||0
+8|modified_at|TEXT|0||0
+9|source|TEXT|0||0
+10|tags|TEXT|0||0
+
+===== founder_artifacts =====
+0|id|INTEGER|0||1
+1|path|TEXT|0||0
+2|filename|TEXT|0||0
+3|filetype|TEXT|0||0
+4|size|INTEGER|0||0
+5|created_at|TEXT|0||0
+6|category|TEXT|0||0
+7|processed|INTEGER|0|0|0
+
+===== memory_fts_config =====
+0|k||1||1
+1|v||0||0
+
+===== canonical_entities =====
+0|id|INTEGER|0||1
+1|canonical_name|TEXT|0||0
+2|alias|TEXT|0||0
+
+===== founder_evidence =====
+0|id|INTEGER|0||1
+1|source_type|TEXT|0||0
+2|source_path|TEXT|0||0
+3|evidence_type|TEXT|0||0
+4|evidence_text|TEXT|0||0
+5|confidence|REAL|0||0
+6|created_at|TEXT|0|CURRENT_TIMESTAMP|0
+
+===== memory_fts_content =====
+0|id|INTEGER|0||1
+1|c0||0||0
+
+===== concepts =====
+0|id|INTEGER|0||1
+1|concept|TEXT|0||0
+2|frequency|INTEGER|0||0
+3|source_count|INTEGER|0||0
+
+===== founder_insights =====
+0|id|INTEGER|0||1
+1|insight_type|TEXT|0||0
+2|title|TEXT|0||0
+3|content|TEXT|0||0
+4|confidence|REAL|0||0
+5|source_count|INTEGER|0||0
+6|created_at|TEXT|0||0
+
+===== memory_fts_data =====
+0|id|INTEGER|0||1
+1|block|BLOB|0||0
+
+===== decision_memories =====
+0|id|INTEGER|0||0
+1|created_at|TEXT|0||0
+2|memory_type|TEXT|0||0
+3|memory|TEXT|0||0
+4|confidence|REAL|0||0
+5|category|TEXT|0||0
+6|domain|TEXT|0||0
+7|quality_score|REAL|0||0
+
+===== founder_notes =====
+0|id|INTEGER|0||1
+1|path|TEXT|0||0
+2|title|TEXT|0||0
+3|content|TEXT|0||0
+4|chars|INTEGER|0||0
+5|category|TEXT|0||0
+6|created_at|TEXT|0|CURRENT_TIMESTAMP|0
+
+===== memory_fts_docsize =====
+0|id|INTEGER|0||1
+1|sz|BLOB|0||0
+
+===== decisions =====
+0|id|INTEGER|0||1
+1|decision|TEXT|0||0
+2|reason|TEXT|0||0
+3|created_at|TEXT|0||0
+
+===== founder_observations =====
+0|id|INTEGER|0||1
+1|observation|TEXT|0||0
+2|confidence|REAL|0||0
+3|created_at|TEXT|0|CURRENT_TIMESTAMP|0
+
+===== memory_fts_idx =====
+0|segid||1||1
+1|term||1||2
+2|pgno||0||0
+
+===== digital_will =====
+0|id|INTEGER|0||1
+1|category|TEXT|0||0
+2|title|TEXT|0||0
+3|instructions|TEXT|0||0
+4|priority|INTEGER|0||0
+
+===== founder_patterns =====
+0|id|INTEGER|0||1
+1|pattern_type|TEXT|0||0
+2|pattern_name|TEXT|0||0
+3|occurrences|INTEGER|0||0
+4|confidence|REAL|0||0
+5|created_at|TEXT|0||0
+
+===== memory_links =====
+0|id|INTEGER|0||1
+1|source_memory|INTEGER|0||0
+2|target_memory|INTEGER|0||0
+3|relationship|TEXT|0||0
+4|strength|REAL|0||0
+
+===== document_fts =====
+0|content||0||0
+1|path||0||0
+
+===== founder_questions =====
+0|id|INTEGER|0||1
+1|question|TEXT|0||0
+2|answer|TEXT|0||0
+3|timestamp|TEXT|0|CURRENT_TIMESTAMP|0
+
+===== notes =====
+0|id|INTEGER|0||1
+1|title|TEXT|0||0
+2|path|TEXT|0||0
+3|chars|INTEGER|0||0
+4|content|TEXT|0||0
+
+===== document_fts_config =====
+0|k||1||1
+1|v||0||0
+
+===== founder_risks =====
+0|id|INTEGER|0||1
+1|risk|TEXT|0||0
+2|impact|TEXT|0||0
+3|confidence|REAL|0||0
+4|created_at|TEXT|0||0
+
+===== observations =====
+0|id|INTEGER|0||1
+1|timestamp|TEXT|0||0
+2|source|TEXT|0||0
+3|observation|TEXT|0||0
+4|confidence|REAL|0||0
+
+===== document_fts_content =====
+0|id|INTEGER|0||1
+1|c0||0||0
+2|c1||0||0
+
+===== founder_state =====
+0|id|INTEGER|0||1
+1|state_name|TEXT|0||0
+2|score|REAL|0||0
+3|evidence_count|INTEGER|0||0
+4|created_at|TEXT|0|CURRENT_TIMESTAMP|0
+
+===== ocr_records =====
+0|id|INTEGER|0||1
+1|file_path|TEXT|0||0
+2|raw_text|TEXT|0||0
+3|created_at|TEXT|0|CURRENT_TIMESTAMP|0
+
+===== document_fts_data =====
+0|id|INTEGER|0||1
+1|block|BLOB|0||0
+
+===== founder_timeline =====
+0|id|INTEGER|0||1
+1|event_date|TEXT|0||0
+2|event_type|TEXT|0||0
+3|title|TEXT|0||0
+4|source|TEXT|0||0
+5|importance|INTEGER|0||0
+
+===== ontology_links =====
+0|id|INTEGER|0||1
+1|source_object|INTEGER|0||0
+2|relation|TEXT|0||0
+3|target_object|INTEGER|0||0
+4|confidence|REAL|0|0.5|0
+
+===== document_fts_docsize =====
+0|id|INTEGER|0||1
+1|sz|BLOB|0||0
+
+===== founder_truths =====
+0|id|INTEGER|0||1
+1|truth_type|TEXT|0||0
+2|truth|TEXT|0||0
+3|confidence|REAL|0||0
+4|evidence_count|INTEGER|0||0
+5|created_at|TEXT|0||0
+
+===== ontology_objects =====
+0|id|INTEGER|0||1
+1|object_type|TEXT|0||0
+2|name|TEXT|0||0
+3|description|TEXT|0||0
+4|status|TEXT|0||0
+5|source_table|TEXT|0||0
+6|source_id|INTEGER|0||0
+7|confidence|REAL|0|0.5|0
+8|created_at|DATETIME|0|CURRENT_TIMESTAMP|0
+9|quality_score|REAL|0|5|0
+10|quality_reason|TEXT|0||0
+
+===== document_fts_idx =====
+0|segid||1||1
+1|term||1||2
+2|pgno||0||0
+
+===== founder_world_model =====
+0|id|INTEGER|0||1
+1|belief|TEXT|0||0
+2|confidence|REAL|0||0
+3|evidence_count|INTEGER|0||0
+4|last_updated|TEXT|0||0
+
+===== people =====
+0|id|INTEGER|0||1
+1|name|TEXT|0||0
+2|relationship|TEXT|0||0
+3|notes|TEXT|0||0
+
+===== document_identity =====
+0|id|INTEGER|0||1
+1|document_id|INTEGER|0||0
+2|path|TEXT|0||0
+3|title|TEXT|0||0
+4|document_type|TEXT|0||0
+5|project|TEXT|0||0
+6|importance|INTEGER|0||0
+7|summary|TEXT|0||0
+8|suggested_name|TEXT|0||0
+
+===== goal_memories =====
+0|id|INTEGER|0||0
+1|created_at|TEXT|0||0
+2|memory_type|TEXT|0||0
+3|memory|TEXT|0||0
+4|confidence|REAL|0||0
+5|category|TEXT|0||0
+6|domain|TEXT|0||0
+7|quality_score|REAL|0||0
+
+===== project_memory_map =====
+0|id|INTEGER|0||1
+1|project_name|TEXT|0||0
+2|memory_id|INTEGER|0||0
+3|relevance|REAL|0||0
+
+===== documents =====
+0|id|INTEGER|0||1
+1|title|TEXT|0||0
+2|path|TEXT|0||0
+3|chars|INTEGER|0||0
+4|content|TEXT|0||0
+5|category|TEXT|0||0
+
+===== goals =====
+0|id|INTEGER|0||1
+1|title|TEXT|0||0
+2|status|TEXT|0||0
+3|priority|INTEGER|0||0
+4|created_at|TEXT|0||0
+
+===== projects =====
+0|id|INTEGER|0||1
+1|name|TEXT|0||0
+2|status|TEXT|0||0
+3|description|TEXT|0||0
+
+===== entities =====
+0|id|INTEGER|0||1
+1|entity|TEXT|0||0
+2|entity_type|TEXT|0||0
+3|frequency|INTEGER|0|1|0
+4|created_at|TEXT|0||0
+5|quality_score|REAL|0|0|0
+
+===== graph =====
+0|id|INTEGER|0||1
+1|source|TEXT|0||0
+2|target|TEXT|0||0
+3|weight|INTEGER|0||0
+
+===== relationships =====
+0|id|INTEGER|0||1
+1|concept_a|TEXT|0||0
+2|concept_b|TEXT|0||0
+3|weight|INTEGER|0||0
+
+===== entity_mentions =====
+0|artifact_id|INTEGER|0||0
+1|entity_id|INTEGER|0||0
+2|count|INTEGER|0||0
+
+===== keyword_hits =====
+0|keyword|TEXT|0||0
+1|hits|INTEGER|0||0
+2|last_seen|TEXT|0||0
+
+===== screenshots =====
+0|id|INTEGER|0||1
+1|path|TEXT|0||0
+2|extracted_text|TEXT|0||0
+3|chars|INTEGER|0||0
+4|created_at|TEXT|0||0
+
+===== entity_relationships =====
+0|id|INTEGER|0||1
+1|entity_a|TEXT|0||0
+2|relationship|TEXT|0||0
+3|entity_b|TEXT|0||0
+4|artifact_id|INTEGER|0||0
+5|confidence|REAL|0||0
+
+===== kg_edges =====
+0|id|INTEGER|0||1
+1|source_node|TEXT|0||0
+2|target_node|TEXT|0||0
+3|relation|TEXT|0||0
+4|weight|REAL|0||0
+
+===== sessions =====
+0|id|INTEGER|0||1
+1|started_at|TEXT|0||0
+2|summary|TEXT|0||0
+
+===== events =====
+0|id|TEXT|0||1
+1|timestamp|TEXT|0||0
+2|source|TEXT|0||0
+3|type|TEXT|0||0
+4|title|TEXT|0||0
+5|content|TEXT|0||0
+6|tags|TEXT|0||0
+7|metadata|TEXT|0||0
+
+===== kg_nodes =====
+0|id|INTEGER|0||1
+1|node_type|TEXT|0||0
+2|node_name|TEXT|0||0
+3|metadata|TEXT|0||0
+
+===== skills =====
+0|id|INTEGER|0||1
+1|name|TEXT|0||0
+2|category|TEXT|0||0
+
+===== evidence =====
+0|id|INTEGER|0||1
+1|skill_id|INTEGER|0||0
+2|artifact_id|INTEGER|0||0
+3|evidence|TEXT|0||0
+4|confidence|REAL|0||0
+
+===== learning_memories =====
+0|id|INTEGER|0||0
+1|created_at|TEXT|0||0
+2|memory_type|TEXT|0||0
+3|memory|TEXT|0||0
+4|confidence|REAL|0||0
+5|category|TEXT|0||0
+6|domain|TEXT|0||0
+7|quality_score|REAL|0||0
+
+===== test123 =====
+0|id|INTEGER|0||0
+
+===== failure_memories =====
+0|id|INTEGER|0||0
+1|created_at|TEXT|0||0
+2|memory_type|TEXT|0||0
+3|memory|TEXT|0||0
+4|confidence|REAL|0||0
+5|category|TEXT|0||0
+6|domain|TEXT|0||0
+7|quality_score|REAL|0||0
+
+===== learnings =====
+0|id|INTEGER|0||1
+1|learning|TEXT|0||0
+2|source|TEXT|0||0
+3|created_at|TEXT|0||0
+
+===== timeline =====
+0|id|INTEGER|0||1
+1|source|TEXT|0||0
+2|title|TEXT|0||0
+3|timestamp|TEXT|0||0
+4|content|TEXT|0||0
+
+===== failures =====
+0|id|INTEGER|0||1
+1|failure|TEXT|0||0
+2|lesson|TEXT|0||0
+3|created_at|TEXT|0||0
+
+===== memories =====
+0|id|INTEGER|0||1
+1|created_at|TEXT|0||0
+2|memory_type|TEXT|0||0
+3|memory|TEXT|0||0
+4|confidence|REAL|0||0
+5|category|TEXT|0||0
+6|domain|TEXT|0||0
+7|quality_score|REAL|0|0|0
+
