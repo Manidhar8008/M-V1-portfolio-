@@ -59,10 +59,13 @@ I manage his external brain containing over **172,076 files** and **44,444 entit
         text: msg.text
       }));
 
-      const data = {
-        text: "Vasuki Founder Mode Active.\n\nConnected to local corpus migration layer.",
-        isMock: true
-      };
+      const response = await fetch(
+  "http://127.0.0.1:8000/api/founder/dashboard"
+);
+
+const data = await response.json();
+
+setIsKnowledgeEngineActive(true);
        
 	setIsKnowledgeEngineActive(false);
 
