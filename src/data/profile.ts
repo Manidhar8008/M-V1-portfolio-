@@ -124,7 +124,7 @@ All of this runs locally and offline at sub-10ms response latency.`,
 
 export const GENERIC_FALLBACK_ANSWER = `I am **Vasuki Core**, Manidhar Pati's personal intelligence system.
 
-My live server-side connection to Gemini is currently in offline mode, but I am pre-seeded with full local records of Manidhar's work. 
+My live server-side connection to Vasuki Knowledge Layer is currently in offline mode, but I am pre-seeded with full local records of Manidhar's work. 
 
 Feel free to click any of the preset cards above to query my database about:
 * **Manidhar's Build Portfolio**
@@ -133,4 +133,4 @@ Feel free to click any of the preset cards above to query my database about:
 * **The Janani Orchestration Layer**
 * **Complex engineering problems solved**
 
-*You can configure the \`GEMINI_API_KEY\` environment variable in the Secrets tab of AI Studio to enable fully dynamic natural-language Q&A!*`;
+*You can configure the \`VASUKI_API_URL\` environment variable in the Secrets tab of AI Studio to enable fully dynamic natural-language Q&A!*`;

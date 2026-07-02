@@ -25,7 +25,7 @@ I manage his external brain containing over **172,076 files** and **44,444 entit
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [isGeminiActive, setIsGeminiActive] = useState<boolean | null>(null);
+  const [isKnowledgeEngineActive, setIsKnowledgeEngineActive] = useState<boolean | null>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   // Auto scroll to chat bottom
@@ -64,7 +64,7 @@ I manage his external brain containing over **172,076 files** and **44,444 entit
         isMock: true
       };
        
-	setIsGeminiActive(false);
+	setIsKnowledgeEngineActive(false);
 
       const botMsg: Message = {
         id: `vasuki-${Date.now()}`,
@@ -165,13 +165,13 @@ I manage his external brain containing over **172,076 files** and **44,444 entit
                   <Brain size={14} />
                 </div>
                 <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-theme-bg flex items-center justify-center">
-                  <div className={`w-1.5 h-1.5 rounded-full ${isGeminiActive === true ? 'bg-green-500' : isGeminiActive === false ? 'bg-amber-500' : 'bg-theme-accent animate-pulse'}`} />
+                  <div className={`w-1.5 h-1.5 rounded-full ${isKnowledgeEngineActive === true ? 'bg-green-500' : isKnowledgeEngineActive === false ? 'bg-amber-500' : 'bg-theme-accent animate-pulse'}`} />
                 </div>
               </div>
               <div className="text-left">
                 <h3 className="text-theme-text-bright font-medium text-xs leading-none">vasuki_core_terminal</h3>
                 <span className="text-theme-text-muted text-[8px] sm:text-[9px] font-mono tracking-wider">
-                  {isGeminiActive === true ? 'DYNAMIC ENGINE ACTIVE' : isGeminiActive === false ? 'LOCAL INDEX SYSTEM' : 'SYSTEM STANDBY'}
+                  {isKnowledgeEngineActive === true ? 'DYNAMIC ENGINE ACTIVE' : isKnowledgeEngineActive === false ? 'LOCAL INDEX SYSTEM' : 'SYSTEM STANDBY'}
                 </span>
               </div>
             </div>
@@ -304,7 +304,7 @@ I manage his external brain containing over **172,076 files** and **44,444 entit
           <div className="px-4 sm:px-6 py-2 bg-theme-card border-t border-theme-border flex flex-col sm:flex-row justify-between items-center text-theme-text-muted text-[8px] sm:text-[9px] font-mono gap-1 select-none">
             <span className="flex items-center gap-1">
               <Key size={10} className="text-theme-border" />
-              <span>DYNAMIC Q&A POWERED BY SERVER_SIDE_GEMINI</span>
+              <span>LIVE KNOWLEDGE RETRIEVAL ENGINE</span>
             </span>
             <span>
               HOST: LOCALHOST_DOCKER
