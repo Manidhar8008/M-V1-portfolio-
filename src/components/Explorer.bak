@@ -17,9 +17,18 @@ export function Explorer() {
     {
       id: 'welcome',
       sender: 'vasuki',
-      text: `Hello, I am **Vasuki Core**, Manidhar Pati's personal intelligence system. 
+      text: `Hello. I am **Vasuki**.
 
-I manage his external brain containing over **172,076 files** and **44,444 entities**. Click any of the interactive Explorer Cards below to query my memory, or type your own custom technical questions in the terminal input!`,
+Ask me about:
+
+• What Manidhar has built
+• Technologies he uses
+• Current projects
+• Why he is a fit for Forward Deployed Engineering roles
+• Current focus areas
+
+I answer using evidence extracted from his personal knowledge system.`,
+
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     },
   ]);
@@ -37,6 +46,47 @@ I manage his external brain containing over **172,076 files** and **44,444 entit
     if (isLoading) return;
     sendMessage(preset.question);
   };
+
+function formatKnowledgeResponse(data: any): string {
+
+  if (data.type === "technology") {
+    return `⚙️ TECHNOLOGY STACK
+
+${data.answer}`;
+  }
+
+  if (data.type === "project") {
+    return `🚀 PROJECTS
+
+${data.answer}`;
+  }
+
+  if (data.type === "focus") {
+    return `🎯 CURRENT FOCUS
+
+${data.answer}`;
+  }
+
+  if (data.type === "summary") {
+    return data.answer;
+  }
+
+  if (data.type === "founder_truth") {
+    return `🧠 FOUNDER KNOWLEDGE
+
+${data.question}
+
+${data.answer}`;
+  }
+
+  if (data.type === "not_found") {
+    return `⚠️ ${data.message}
+
+${data.suggestions.join("\n")}`;
+  }
+
+  return "No response";
+}
 
   const sendMessage = async (textToSend: string) => {
     const trimmed = textToSend.trim();
@@ -81,7 +131,7 @@ setIsKnowledgeEngineActive(true);
       const botMsg: Message = {
         id: `vasuki-${Date.now()}`,
         sender: 'vasuki',
-        text: JSON.stringify(data, null, 2),
+        text: formatKnowledgeResponse(data),
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
 
@@ -111,7 +161,24 @@ setIsKnowledgeEngineActive(true);
       {
         id: 'welcome-reset',
         sender: 'vasuki',
-        text: `Console memory cleared. I am **Vasuki Core**. Ready to assist you. What would you like to know about Manidhar or my internal systems?`,
+        text: `Console memory cleared. Welcome.
+
+I am the Founder Knowledge Engine.
+
+I answer questions about Manidhar's engineering work using evidence extracted from his personal knowledge system.
+
+Suggested questions:
+
+• Who is Manidhar?
+
+• What has he built?
+
+• What technologies does he use?
+
+• What problems has he solved?
+
+• Why is he a strong Forward Deployed Engineer?,
+
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       },
     ]);
@@ -125,44 +192,47 @@ setIsKnowledgeEngineActive(true);
         <div className="space-y-2 text-center max-w-xl mx-auto">
           <div className="inline-flex items-center gap-1.5 text-theme-accent font-mono text-[10px] uppercase tracking-widest bg-theme-accent-subtle px-2.5 py-1 rounded border border-theme-accent/20">
             <Terminal size={12} className="animate-pulse" />
-            <span>Core Daemon Terminal</span>
+            <span>Founder Intelligence Explorer</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-medium text-theme-text-bright tracking-tight">
-            Ask Vasuki
+            Interview the Founder
           </h2>
           <p className="text-theme-text-muted text-xs sm:text-sm leading-relaxed">
-            Query Manidhar's personal intelligence database directly. Select an active query key or input your own custom system queries.
+            Interview the founder. Ask about projects, technologies, systems, execution, and engineering decisions.
           </p>
         </div>
 
         {/* Preset Selector Grid */}
         <div className="space-y-3">
           <h4 className="text-theme-text-muted font-mono text-[9px] uppercase tracking-wider pl-1 select-none">
-            Active Query Keys:
+            Suggested Questions
           </h4>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5" id="preset-questions-grid">
             {PRESET_QUESTIONS.map((preset) => {
-              const Icon = ICON_MAP[preset.icon] || Cpu;
-              return (
-                <button
-                  key={preset.id}
-                  onClick={() => handlePresetClick(preset)}
-                  disabled={isLoading}
-                  className="card-carved flex flex-col items-start p-3 rounded-lg bg-theme-card border border-theme-border hover:border-theme-accent/50 transition-all duration-200 text-left cursor-pointer disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98] group"
-                  id={`preset-card-${preset.id}`}
-                >
-                  <div className="w-6 h-6 rounded bg-theme-bg flex items-center justify-center text-theme-text-muted group-hover:text-theme-accent border border-theme-border transition-colors mb-2.5">
-                    <Icon size={11} />
-                  </div>
-                  <h3 className="text-theme-text-bright text-[10px] sm:text-[11px] font-medium tracking-tight group-hover:text-theme-text-bright mb-1 line-clamp-2 leading-snug">
-                    {preset.question}
-                  </h3>
-                  <span className="text-theme-text-muted font-mono text-[8px] uppercase tracking-wider group-hover:text-theme-accent transition-colors">
-                    Query System
-                  </span>
-                </button>
-              );
-            })}
+  const IconComponent = ICON_MAP[preset.icon] || Cpu;
+
+  return (
+    <button
+      key={preset.id}
+      onClick={() => handlePresetClick(preset)}
+      disabled={isLoading}
+      className="card-carved flex flex-col items-start p-3 rounded-lg"
+      id={`preset-card-${preset.id}`}
+    >
+      <div className="w-6 h-6 rounded bg-theme-bg flex items-center justify-center">
+        <IconComponent size={11} />
+      </div>
+
+      <h3 className="text-theme-text-bright text-[10px]">
+        {preset.question}
+      </h3>
+
+      <span className="text-theme-text-muted font-mono text-[8px]">
+        Query System
+      </span>
+    </button>
+  );
+})}
           </div>
         </div>
 
@@ -197,16 +267,6 @@ setIsKnowledgeEngineActive(true);
                 <Trash2 size={12} />
               </button>
             </div>
-          </div>
-
-          {/* Evidence telemetry bar right below header */}
-          <div className="px-4 sm:px-6 py-2 border-b border-theme-border bg-theme-bg/40 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[8px] sm:text-[9px] text-theme-text-muted select-none">
-            <span className="text-theme-text-bright font-semibold">CORE TELEMETRY:</span>
-            <span>172,076 files</span>
-            <span className="text-theme-border-subtle">|</span>
-            <span>44,444 entities</span>
-            <span className="text-theme-border-subtle">|</span>
-            <span>21,422 memories</span>
           </div>
 
           {/* Messages Stream */}
@@ -296,7 +356,7 @@ setIsKnowledgeEngineActive(true);
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyDown={handleKeyPress}
                 disabled={isLoading}
-                placeholder={isLoading ? 'Computing localized index response...' : 'Ask about built, janani, skills, problems...'}
+                placeholder={isLoading ? 'Computing localized index response...' : 'Ask about projects, technologies, focus areas, or FDE experience...'}
                 className="flex-grow bg-theme-bg border border-theme-border rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-theme-text-bright placeholder-theme-text-muted/60 focus:outline-none focus:border-theme-accent/40 disabled:opacity-50 transition-colors font-mono"
                 id="explorer-input-box"
               />
@@ -316,10 +376,10 @@ setIsKnowledgeEngineActive(true);
           <div className="px-4 sm:px-6 py-2 bg-theme-card border-t border-theme-border flex flex-col sm:flex-row justify-between items-center text-theme-text-muted text-[8px] sm:text-[9px] font-mono gap-1 select-none">
             <span className="flex items-center gap-1">
               <Key size={10} className="text-theme-border" />
-              <span>LIVE KNOWLEDGE RETRIEVAL ENGINE</span>
+              <span>FOUNDER KNOWLEDGE SYSTEM</span>
             </span>
             <span>
-              HOST: LOCALHOST_DOCKER
+              MODE: PORTFOLIO
             </span>
           </div>
 

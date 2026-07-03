@@ -3,8 +3,8 @@ import { MetricItem, PresetQuestion } from '../types';
 export const MANIDHAR_PROFILE = {
   name: 'Manidhar Pati',
   title: 'AI Systems Engineer',
-  tagline: 'I build systems that transform digital activity into memory, knowledge, and intelligence.',
-  bio: 'AI Systems Engineer focused on personal intelligence systems, knowledge retrieval, local-first computing, and automation. Builder of Vasuki, an offline-first system that monitors digital activity, extracts metadata from raw files and multi-modal screen captures, and indexes them into an integrated relational database and high-dimensional vector store.',
+  tagline: 'I build deployed AI systems that turn messy digital activity into usable intelligence.',
+  bio: 'AI Systems Engineer focused on personal intelligence, FDE-style problem solving, knowledge systems, and applied automation. Builder of Vasuki, a local-first system for indexing files, screenshots, documents, and activity into structured knowledge. Strong interest in product execution, system design, and real-world AI workflows.',
   email: 'patimanidhar23@gmail.com',
   github: 'https://github.com/patimanidhar23',
   linkedin: 'https://linkedin.com/in/patimanidhar23',
@@ -12,125 +12,104 @@ export const MANIDHAR_PROFILE = {
 
 export const VASUKI_METRICS: MetricItem[] = [
   {
-    label: 'Processed Files',
+    label: 'Indexed Files',
     value: '172,076+',
-    description: 'Raw code, markdown, and captured screen files processed.',
+    description: 'Local files processed across the system.',
     icon: 'FolderOpen',
   },
   {
-    label: 'Parsed Entities',
+    label: 'Entities',
     value: '44,444+',
-    description: 'Unique subjects resolved in our graph index.',
+    description: 'Extracted objects and named references.',
     icon: 'Cpu',
   },
   {
-    label: 'Co-Mention Links',
-    value: '545,000+',
-    description: 'Relationships mined across parsed records.',
-    icon: 'Network',
-  },
-  {
-    label: 'Memories Indexed',
+    label: 'Memories',
     value: '21,422+',
-    description: 'Semantic text block chunks synthesized into vector space.',
+    description: 'Curated memory blocks and summaries.',
     icon: 'Brain',
   },
   {
-    label: 'Document Repos',
+    label: 'Documents',
     value: '595+',
-    description: 'Active books and layout-aware PDFs indexed.',
+    description: 'PDFs and documents parsed into the knowledge base.',
     icon: 'FileText',
   },
-  {
-    label: 'Schema Mappings',
-    value: '153+',
-    description: 'Dedicated relational database foreign-key couplings.',
-    icon: 'Layers',
-  },
 ];
 
-export const PRESET_QUESTIONS: PresetQuestion[] = [
-  {
-    id: 'built',
-    question: 'What has Manidhar built?',
-    label: 'Portfolio & Systems Spec',
-    icon: 'Cpu',
-  },
-  {
-    id: 'janani',
-    question: 'Tell me about Janani.',
-    label: 'Orchestration & Supervisors',
-    icon: 'Sparkles',
-  },
-  {
-    id: 'skills',
-    question: 'What skills does he actually use?',
-    label: 'Technical Capabilities',
-    icon: 'Code',
-  },
-  {
-    id: 'problems',
-    question: 'What problems has he solved?',
-    label: 'Engineering Feats',
-    icon: 'Zap',
-  },
-  {
-    id: 'evidence',
-    question: 'Show evidence.',
-    label: 'Active System Telemetry',
-    icon: 'Layers',
-  },
+export const PRESET_QUESTIONS = [
+{
+id:"founder",
+question:"Who is Manidhar?",
+label:"Founder Profile",
+icon:"Brain"
+},
+{
+id:"projects",
+question:"What has he built?",
+label:"Projects",
+icon:"Cpu"
+},
+{
+id:"tech",
+question:"What technologies does he use?",
+label:"Technology Stack",
+icon:"Code"
+},
+{
+id:"problems",
+question:"What problems has he solved?",
+label:"Engineering Impact",
+icon:"Zap"
+},
+{
+id:"fde",
+question:"Why is he a strong Forward Deployed Engineer?",
+label:"FDE Fit",
+icon:"Sparkles"
+}
 ];
+  
 
 export const STATIC_ANSWERS: Record<string, string> = {
-  'built': `I am the core intelligence daemon. Let me run a search on what Manidhar has constructed:
+  'fde-fit': `Manidhar is a strong fit for FDE-style work because he builds systems that connect data, workflow, and execution. His work shows three useful traits for forward-deployed roles:
 
-Manidhar specializes in highly optimized, local-first systems that handle heavy data lifting. His flagship build is **Vasuki**, the very system you are communicating with right now. He has also engineered:
+* Comfort with messy, real-world data
+* Ability to turn requirements into working systems
+* Strong focus on deployed products rather than abstract demos
 
-* **Janani**: The automated background system daemon supervising all of Vasuki's indexing runs and background pipelines.
-* **Layout-Aware PDF Parsers**: Custom OCR systems that strip layout coordinates to accurately parse multi-column textbooks and research papers.
-* **Relational Vector Search Engines**: Hybrid search modules that combine fast embedding matching with classical SQLite relationships to run rich queries under 10ms.`,
+His portfolio should position him as someone who can move between product, data, and engineering with low friction.`,
 
-  'janani': `**Janani** is my background supervisor daemon. Since I operate entirely locally on the user's hardware, I need a helper to monitor system health. Manidhar built Janani in Go to:
+  'ship': `Manidhar has built a local-first AI system called Vasuki and a set of related portfolio and knowledge components around it. The strongest story is not just the number of files or tables, but the fact that he has assembled a working system that connects data ingestion, query routing, and founder-facing intelligence.
 
-* Run continuously as a native systemd service.
-* Prevent memory overflows by dynamically throttling multi-threaded PDF and image OCR operations, capping our total memory footprint under **1.48GB RAM**.
-* Automatically monitor and auto-heal active database connections and resolve SQLite file-write locks.`,
+The portfolio should emphasize:
+* What the system does
+* What problem it solves
+* What parts he built himself
+* How it is used in practice`,
 
-  'skills': `Here is the verified list of tools, runtimes, and models that Manidhar actively uses to build my infrastructure:
+  'vasuki': `Vasuki is Manidhar's flagship personal intelligence system. It is meant to index personal data, organize evidence, and support reasoning over files, documents, screenshots, and notes.
 
-* **Systems & Languages**: Go, Python, C++, TypeScript, Bash/Shell.
-* **Vector & Relational Storage**: SQLite (Better-SQLite3), PostgreSQL (pgvector), Redis.
-* **Information Retrieval & AI**: Graph-Augmented RAG pipelines, layout-aware OCR extraction, HNSW indexing, and local quantized LLM fine-tuning.
-* **Runtimes & Containers**: Linux system optimization, systemd services, Docker container orchestration, and asynchronous threading pipelines.`,
+For the portfolio, Vasuki should be presented as a deployed product story:
+* local-first
+* evidence-driven
+* personal intelligence layer
+* continuously improving over time`,
 
-  'problems': `Manidhar built me to solve three major limitations of traditional AI systems:
+  'janani': `Janani is the companion product layer in the ecosystem. It should be positioned as a second system or workflow layer that supports the broader AI/product vision.
 
-1. **Semantic Noise**: Traditional flat vector search is noisy. Manidhar solved this by introducing **Graph-RAG**, which filters raw embeddings through physical SQLite database keys (153+ schema couplings).
-2. **Layout Loss in Documents**: PDFs often lose format during raw text extraction. He designed a custom coordinate-based parser that preserves tables and multi-column headers into clean markdown.
-3. **Resource Bound Crashes**: Running large vector databases local-first can easily consume 16GB+ RAM. He implemented thread-throttled worker pools in Go that limit our workspace to under **1.48GB RAM**.`,
+For now, keep the explanation simple and avoid overloading the page with too many claims.`,
 
-  'evidence': `My system logs are fully loaded. Here is the active telemetry verifying my scale:
+  'stack': `The portfolio should show a practical stack:
+* Python
+* FastAPI
+* SQLite
+* React
+* TypeScript
+* Tailwind
+* GitHub
 
-* **Files Processed**: **172,076+** raw code, markdown, and captured screen files.
-* **Parsed Entities**: **44,444+** unique subjects resolved in our graph index.
-* **Co-Mention Links**: **545,000+** parsed relationships.
-* **Memories Indexed**: **21,422+** semantic context blocks.
-* **Document Repositories**: **595+** active books and layout-aware PDFs.
-* **Hard Schema Mappings**: **153+** dedicated SQLite foreign-key relationships.
-
-All of this runs locally and offline at sub-10ms response latency.`,
+If a technology is not clearly supported by the work shown, do not include it on the landing page.`,
 };
 
-export const GENERIC_FALLBACK_ANSWER = `I am **Vasuki Core**, Manidhar Pati's personal intelligence system.
-
-My live server-side connection to Vasuki Knowledge Layer is currently in offline mode, but I am pre-seeded with full local records of Manidhar's work. 
-
-Feel free to click any of the preset cards above to query my database about:
-* **Manidhar's Build Portfolio**
-* **The Vasuki Core Architecture**
-* **Technical Skills & Stack**
-* **The Janani Orchestration Layer**
-* **Complex engineering problems solved**
-
-*You can configure the \`VASUKI_API_URL\` environment variable in the Secrets tab of AI Studio to enable fully dynamic natural-language Q&A!*`;
+export const GENERIC_FALLBACK_ANSWER = `Ask about Manidhar's projects, systems, stack, and FDE-style work.`;

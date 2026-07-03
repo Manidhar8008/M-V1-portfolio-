@@ -14,7 +14,7 @@ export default defineConfig(({mode}) => {
   base: '/M-V1-portfolio-/',
   plugins: [react(), tailwindcss()],
     define: {
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
+      'process.env.VASUKI_API_URL': JSON.stringify(env.VASUKI_API_URL),
     },
     resolve: {
       alias: {
