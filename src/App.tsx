@@ -13,11 +13,11 @@ export default function App() {
   }, []);
 
   const navLinks = [
-    { label: 'Ask Vasuki', href: '#vasuki-explorer' },
-    { label: 'Evidence', href: '#evidence-section' },
-    { label: 'About Me', href: '#about-me' },
-    { label: 'Contact', href: '#contact' },
-  ];
+  { label: 'Projects', href: '#projects' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Contact', href: '#contact' },
+];
 
   return (
     <div className="relative w-full min-h-screen overflow-x-hidden bg-theme-bg text-theme-text-bright font-sans scroll-smooth select-none">
@@ -110,6 +110,8 @@ export default function App() {
         {/* Section 1: Hero Section */}
         <Hero />
         
+        <section id="projects"></section>
+     
         {/* Section 2: Interactive Explorer Bot */}
         {/* <Explorer /> */}
 
