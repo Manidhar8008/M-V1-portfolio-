@@ -111,10 +111,10 @@ export default function App() {
         <Hero />
         
         {/* Section 2: Interactive Explorer Bot */}
-        <Explorer />
+        {/* <Explorer /> */}
 
         {/* Section 3: Stat Metrics (Evidence) */}
-        <Metrics />
+        {/* <Metrics /> */}
 
         {/* Section 4: About Manidhar */}
         <section className="relative py-20 px-6 bg-theme-bg border-t border-theme-border" id="about-me">
