@@ -127,10 +127,10 @@ setIsKnowledgeEngineActive(true);
         <div className="space-y-2 text-center max-w-xl mx-auto">
           <div className="inline-flex items-center gap-1.5 text-theme-accent font-mono text-[10px] uppercase tracking-widest bg-theme-accent-subtle px-2.5 py-1 rounded border border-theme-accent/20">
             <Terminal size={12} className="animate-pulse" />
-            <span>Digital Archaeology Console</span>
+            <span>Core Daemon Terminal</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-medium text-theme-text-bright tracking-tight">
-            Vasuki Explorer
+            Ask Vasuki
           </h2>
           <p className="text-theme-text-muted text-xs sm:text-sm leading-relaxed">
             Query Manidhar's personal intelligence database directly. Select an active query key or input your own custom system queries.
@@ -275,7 +275,7 @@ setIsKnowledgeEngineActive(true);
                 <div className="bg-theme-bg border border-theme-border rounded-lg rounded-tl-none px-4 py-3">
                   <div className="flex items-center gap-1.5 text-theme-accent font-mono text-[8px] sm:text-[9px] uppercase tracking-widest mb-1 select-none">
                     <RefreshCw size={10} className="animate-spin" />
-                    <span>SEARCHING FOUNDER KNOWLEDGE...</span>
+                    <span>RETRIEVING HYBRID INDEX...</span>
                   </div>
                   <div className="flex items-center gap-1 py-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-theme-accent animate-bounce" style={{ animationDelay: '0ms' }} />
@@ -318,10 +318,10 @@ setIsKnowledgeEngineActive(true);
           <div className="px-4 sm:px-6 py-2 bg-theme-card border-t border-theme-border flex flex-col sm:flex-row justify-between items-center text-theme-text-muted text-[8px] sm:text-[9px] font-mono gap-1 select-none">
             <span className="flex items-center gap-1">
               <Key size={10} className="text-theme-border" />
-              <span>CURATED FOUNDER INTELLIGENCE SYSTEM</span>
+              <span>LIVE KNOWLEDGE RETRIEVAL ENGINE</span>
             </span>
             <span>
-              MODE: DIGITAL ARCHAEOLOGY
+              HOST: LOCALHOST_DOCKER
             </span>
           </div>
 
