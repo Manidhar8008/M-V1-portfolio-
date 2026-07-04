@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Hero } from './components/Hero';
+import { Projects } from './components/Projects';
 import { Metrics } from './components/Metrics';
 import { Explorer } from './components/Explorer';
 import { Mail, Cpu, Brain, Menu, X, ArrowRight } from 'lucide-react';
@@ -110,7 +111,7 @@ export default function App() {
         {/* Section 1: Hero Section */}
         <Hero />
         
-        <section id="projects"></section>
+        <Projects />
      
         {/* Section 2: Interactive Explorer Bot */}
         {/* <Explorer /> */}
