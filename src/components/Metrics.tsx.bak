@@ -22,7 +22,7 @@ export function Metrics() {
             Verified Index Telemetry
           </span>
           <h2 className="text-2xl sm:text-3xl font-medium text-theme-text-bright tracking-tight">
-            Engineering Evidence
+            Evidence, Not Claims
           </h2>
         </div>
 
