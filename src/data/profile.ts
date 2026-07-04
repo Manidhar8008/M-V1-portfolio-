@@ -1,3 +1,5 @@
+import type { MetricItem, PresetQuestion } from '../types';
+
 export const MANIDHAR_PROFILE = {
   name: 'Manidhar Pati',
   title: 'Founder • AI Systems Engineer',
