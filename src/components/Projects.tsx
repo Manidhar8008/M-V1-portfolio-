@@ -3,22 +3,46 @@ import React from 'react';
 export function Projects() {
   const projects = [
     {
-      title: 'Vasuki',
+      title: 'JAN AI',
+      github: 'https://github.com/Manidhar8008/Startup-borardcasting-system',
       description:
-        'Personal Intelligence System that transforms files, documents, and digital activity into searchable knowledge.',
-      stack: 'Python • FastAPI • SQLite • React • TypeScript',
+        'Creator-intelligence OS that ingests research, scans live signals, ranks topics by business value, and turns them into platform-specific content through a controlled multi-agent pipeline.',
+      stack: [
+        'Multi-agent orchestration',
+        'Gemini',
+        'FastAPI',
+        'ChromaDB',
+        'feedparser',
+        'BeautifulSoup',
+      ],
     },
     {
-      title: 'Janani AI',
+      title: 'AIM1000',
+      github: 'https://github.com/Manidhar8008/AIM1000',
       description:
-        'AI workflow platform focused on automation, content systems, and business intelligence.',
-      stack: 'Python • AI Agents • Automation',
+        'Application autopilot that scrapes job leads, generates tailored resumes from a master template, and packages each role into a mission-control workflow for faster submission.',
+      stack: [
+        'pandas',
+        'python-docx',
+        'Google Generative AI',
+        'CSV pipelines',
+        'HTML mission tracker',
+        'Windows automation',
+      ],
     },
     {
-      title: 'Knowledge Engine',
+      title: 'Vasuki v2',
+      github: 'https://github.com/Manidhar8008/vasuki-v2',
       description:
-        'Interactive portfolio explorer designed to showcase retrieval and reasoning systems.',
-      stack: 'React • TypeScript • FastAPI',
+        'Local-first reasoning layer that searches personal memory, routes commands through a service registry, and returns auditable answers from a verified SQLite-backed knowledge base.',
+      stack: [
+        'SQLite',
+        'Memory search',
+        'Command router',
+        'Audit logging',
+        'Response composer',
+        'Local file search',
+      ],
     },
   ];
 
@@ -52,9 +76,25 @@ export function Projects() {
                 {project.description}
               </p>
 
-              <p className="font-mono text-[10px] uppercase tracking-wider text-theme-accent">
-                {project.stack}
-              </p>
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-[10px] font-mono uppercase tracking-widest text-theme-accent hover:text-theme-text-bright transition-colors"
+              >
+                View Repository →
+              </a>
+
+              <div className="flex flex-wrap gap-2 pt-2">
+                {project.stack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 text-[9px] font-mono uppercase tracking-wide rounded border border-theme-border text-theme-accent"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
