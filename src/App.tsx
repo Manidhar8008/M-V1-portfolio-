@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { Hero } from './components/Hero';
+import { Architecture } from './components/Architecture';
+import { VasukiSection } from './components/VasukiSection';
 import { Projects } from './components/Projects';
 import { Evidence } from './components/Evidence';
+import { Timeline } from './components/Timeline';
 import { Metrics } from './components/Metrics';
 import { Explorer } from './components/Explorer';
 import { Mail, Cpu, Brain, Menu, X, ArrowRight } from 'lucide-react';
@@ -111,9 +114,15 @@ export default function App() {
       <main className="w-full">
   <Hero />
 
+  <Architecture />
+
+  <VasukiSection />
+
   <Projects />
 
   <Evidence />
+
+  <Timeline />
 
   {/* Explorer coming back after backend deployment */}
   {/* <Explorer /> */}
