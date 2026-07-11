@@ -64,7 +64,7 @@ I maintain a structured knowledge base of his projects and technical philosophy.
     setInputValue('');
     setIsLoading(true);
     setIsKnowledgeEngineActive(true);
-
+   
     try {
       const response = await fetch('http://127.0.0.1:8000/api/query', {
         method: 'POST',
@@ -73,7 +73,8 @@ I maintain a structured knowledge base of his projects and technical philosophy.
         },
         body: JSON.stringify({ query: textToSend }),
       });
-
+      
+      // comment fetch temporarily
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
       }

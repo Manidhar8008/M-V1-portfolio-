@@ -124,8 +124,7 @@ export default function App() {
 
   <Timeline />
 
-  {/* Explorer coming back after backend deployment */}
-  {/* <Explorer /> */}
+  <Explorer />  
 
   {/* Metrics can be restored later */}
   {/* <Metrics /> */}

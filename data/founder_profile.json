@@ -1,0 +1,27 @@
+{
+  "name": "Manidhar Pati",
+  "location": "Warangal, Telangana",
+  "role": "Founder, AI Systems Engineer",
+  "experience": [
+    "Cognizant - Lime Micromobility",
+    "Genpact - Otis Elevators"
+  ],
+  "projects": [
+    "Vasuki AI",
+    "JAN AI",
+    "AIM1000"
+  ],
+  "skills": [
+    "Python",
+    "FastAPI",
+    "React",
+    "TypeScript",
+    "SQLite",
+    "AI Agents"
+  ],
+  "facts": {
+    "indexed_files": 170000,
+    "documents_processed": 595,
+    "primary_system": "Vasuki AI"
+  }
+}
