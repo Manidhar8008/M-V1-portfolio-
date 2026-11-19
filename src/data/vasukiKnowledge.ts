@@ -42,7 +42,7 @@ export const VASUKI_PUBLIC_KNOWLEDGE: VasukiKnowledgeRecord[] = [
     category: "Projects",
     keywords: ["projects", "flagship", "janani", "janani.ai", "jan ai", "jan.ai", "mw.ai", "mw ai", "aim1000", "ani.ai", "book", "media", "discipline", "job automation"],
     answer:
-      "The portfolio includes Vasuki OS for personal intelligence; Janani.ai for personal AI and discipline workflows; Jan.ai for AI media management; MW.AI for practical business data and automation systems; and AIM1000 for job-search workflow automation. Ani.ai explores AI-assisted book writing. Each project applies automation to a defined information or operating problem.",
+      "The published portfolio highlights JAN AI, a creator-intelligence system that turns research and live signals into platform-specific content; AIM1000, a job-application workflow that gathers leads and tailors resumes; and Vasuki v2, a local-first reasoning layer over a structured SQLite knowledge base. Other active work includes MW.AI business automation and Janani.ai personal AI workflows.",
   },
   {
     id: "mw-upvc",
@@ -67,6 +67,14 @@ export const VASUKI_PUBLIC_KNOWLEDGE: VasukiKnowledgeRecord[] = [
     keywords: ["skills", "stack", "python", "fastapi", "react", "typescript", "sqlite", "postgresql", "pgvector", "qdrant", "ollama", "linux", "termux", "api", "database", "frontend", "backend"],
     answer:
       "The working stack includes Python and FastAPI for services; React, TypeScript, and Vite for interfaces; SQLite for local-first storage; PostgreSQL and pgvector for hosted relational and vector workloads; and local model tooling such as Ollama. The emphasis is on explicit data models, API boundaries, reliable workflows, and local-first fallbacks.",
+  },
+  {
+    id: "career",
+    title: "Career timeline — From operations to AI systems",
+    category: "Experience",
+    keywords: ["experience", "career", "cognizant", "lime", "micromobility", "genpact", "otis", "data analytics", "data engineering", "machine learning", "employment", "operations", "2022", "2023", "2024", "2025", "2026"],
+    answer:
+      "The published timeline records Cognizant and Lime Micromobility operations work in 2022; a move toward data and analytics in 2023; data engineering and machine-learning projects in 2024; Genpact and Otis Elevators Order-to-Cash work in 2025; and the founder-led Vasuki AI systems work in 2026.",
   },
   {
     id: "approach",
