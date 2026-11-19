@@ -19,7 +19,7 @@ import { PRESET_QUESTIONS } from "../data/profile";
 import { searchVasukiKnowledge } from "../data/vasukiKnowledge";
 import type { Message, PresetQuestion } from "../types";
 
-const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
+const ICON_MAP: Record<string, typeof Cpu> = {
   Cpu,
   Brain,
   Sparkles,
@@ -87,6 +87,7 @@ export function Explorer() {
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [isExplorerVisible, setIsExplorerVisible] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -98,6 +99,18 @@ export function Explorer() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const section = document.getElementById("vasuki-explorer");
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsExplorerVisible(entry.isIntersecting),
+      { threshold: 0.15 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
   }, []);
 
   const sendMessage = (value: string) => {
@@ -346,16 +359,18 @@ export function Explorer() {
             <ArrowUp size={16} />
           </button>
         )}
-        <button
-          type="button"
-          onClick={scrollToExplorer}
-          aria-label="Open Vasuki Explorer"
-          title="Open Vasuki Explorer"
-          className="flex h-11 items-center gap-2 rounded-full border border-theme-accent/40 bg-theme-card/95 px-4 font-mono text-[10px] font-semibold uppercase tracking-wider text-theme-text-bright shadow-lg backdrop-blur transition hover:border-theme-accent hover:text-theme-accent"
-        >
-          <MessageCircle size={14} />
-          <span>Ask Vasuki</span>
-        </button>
+        {!isExplorerVisible && (
+          <button
+            type="button"
+            onClick={scrollToExplorer}
+            aria-label="Open Vasuki Explorer"
+            title="Open Vasuki Explorer"
+            className="flex h-11 items-center gap-2 rounded-full border border-theme-accent/40 bg-theme-card/95 px-4 font-mono text-[10px] font-semibold uppercase tracking-wider text-theme-text-bright shadow-lg backdrop-blur transition hover:border-theme-accent hover:text-theme-accent"
+          >
+            <MessageCircle size={14} />
+            <span>Ask Vasuki</span>
+          </button>
+        )}
       </div>
     </>
   );
