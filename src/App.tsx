@@ -18,6 +18,7 @@ export default function App() {
   }, []);
 
   const navLinks = [
+  { label: 'Explorer', href: '#vasuki-explorer' },
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
   { label: 'Skills', href: '#skills' },
