@@ -241,7 +241,7 @@ export function Explorer() {
 
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-theme-border bg-theme-bg/50 px-4 py-2 font-mono text-[8px] text-theme-text-muted sm:px-6 sm:text-[9px]">
               <span className="font-semibold text-theme-text-bright">PUBLIC INDEX</span>
-              <span>8 knowledge records</span>
+              <span>9 knowledge records</span>
               <span className="text-theme-border-subtle">·</span>
               <span>Local search</span>
               <span className="text-theme-border-subtle">·</span>
